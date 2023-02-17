@@ -1,10 +1,29 @@
-# gin blog 学习
+# gin blog demo
+
+`go version go1.18.9 windows/amd64`
+
+## HTTP 应用
+day01
+
+1. gin 搭建 Blog API
+2. 使用JWT鉴权
+
+day02
+
+3. 简单的文件日志记录
+4. 优雅的重启服务
+5. 增加 Swagger
+6. 定制 GORM Callbacks
+
+
 
 ## conf
+
 拷贝并修改配置文件
 `cp app.ini.default app.ini`
 
 ## packages
+
 - gin `go get -u github.com/gin-gonic/gin` Golang 的一个微框架，性能极佳
 - com `go get -u github.com/unknwon/com` 一个小而美的工具包
 - gorm `go get -u github.com/jinzhu/gorm` 对开发人员友好的 ORM 框架
@@ -13,6 +32,7 @@
 - jwt `go get -u github.com/dgrijalva/jwt-go` 身份校验
 
 ## database
+
 ```
 CREATE TABLE `blog_tag` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -50,3 +70,52 @@ CREATE TABLE `blog_auth` (
 
 INSERT INTO `blog_auth` (`id`, `username`, `password`) VALUES (null, 'test', 'test123456');
 ```
+
+## 添加 Swagger
+
+安装 swag
+
+```
+$ go install github.com/swaggo/swag/cmd/swag@latest
+```
+
+验证是否安装成功
+
+```
+$ swag -v
+swag version v1.8.10
+```
+
+安装 gin-swagger
+
+```
+$ go get -u github.com/swaggo/gin-swagger@v1.2.0
+$ go get -u github.com/swaggo/files
+$ go get -u github.com/alecthomas/template
+```
+
+编写 API 注释，可参考 swag 语法
+
+## Swagger API 增加鉴权(auth)字段
+
+在 main 入口文件增加全局配置，`Header`头里`token`字段，可修改
+
+```
+// @title gin-demo API
+// @version 0.0.1
+// @description This is a gin blog example
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name token
+// @BasePath /
+```
+
+在具体的 handler 里添加注释
+
+```
+// @Security ApiKeyAuth
+```
+
+访问 http://127.0.0.1:8080/swagger/index.html
+
+可以直接使用开始调试了^\_^
