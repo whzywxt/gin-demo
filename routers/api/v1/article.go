@@ -288,7 +288,7 @@ func DeleteArticle(c *gin.Context) {
 }
 
 const (
-	QRCODE_URL = "https://github.com/EDDYCJY/blog#gin%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95"
+	QRCODE_URL = "https://github.com/whzywxt/gin-demo"
 )
 
 func GenerateArticlePoster(c *gin.Context) {

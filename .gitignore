@@ -1,2 +1,6 @@
 conf/app.ini
 .vscode/*
+
+runtime/*
+!runtime/qrcode/bg.jpg
+!runtime/fonts
