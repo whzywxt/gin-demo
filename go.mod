@@ -1,4 +1,4 @@
-module github.com/EDDYCJY/go-gin-example
+module github.com/whzywxt/gin-demo
 
 go 1.18
 
@@ -55,24 +55,24 @@ require (
 )
 
 replace (
-	github.com/EDDYCJY/go-gin-example/conf => c:/www/code/go-gin-example/conf
-	github.com/EDDYCJY/go-gin-example/docs => c:/www/code/go-gin-example/docs
-	github.com/EDDYCJY/go-gin-example/middleware => c:/www/code/go-gin-example/middleware
-	github.com/EDDYCJY/go-gin-example/middleware/jwt => c:/www/code/go-gin-example/middleware/jwt
-	github.com/EDDYCJY/go-gin-example/models => c:/www/code/go-gin-example/models
-	github.com/EDDYCJY/go-gin-example/pkg/app => c:/www/code/go-gin-example/pkg/app
-	github.com/EDDYCJY/go-gin-example/pkg/e => c:/www/code/go-gin-example/pkg/e
-	github.com/EDDYCJY/go-gin-example/pkg/export => c:/www/code/go-gin-example/pkg/export
-	github.com/EDDYCJY/go-gin-example/pkg/file => c:/www/code/go-gin-example/pkg/file
-	github.com/EDDYCJY/go-gin-example/pkg/gredis => c:/www/code/go-gin-example/pkg/gredis
-	github.com/EDDYCJY/go-gin-example/pkg/logging => c:/www/code/go-gin-example/pkg/logging
-	github.com/EDDYCJY/go-gin-example/pkg/qrcode => c:/www/code/go-gin-example/pkg/qrcode
-	github.com/EDDYCJY/go-gin-example/pkg/service => c:/www/code/go-gin-example/pkg/service
-	github.com/EDDYCJY/go-gin-example/pkg/service/auth_service => c:/www/code/go-gin-example/pkg/service/auth_service
-	github.com/EDDYCJY/go-gin-example/pkg/service/tag_service => c:/www/code/go-gin-example/pkg/service/tag_service
-	github.com/EDDYCJY/go-gin-example/pkg/service/article_service => c:/www/code/go-gin-example/pkg/service/article_service
-	github.com/EDDYCJY/go-gin-example/pkg/setting => c:/www/code/go-gin-example/pkg/setting
-	github.com/EDDYCJY/go-gin-example/pkg/util => c:/www/code/go-gin-example/pkg/util
-	github.com/EDDYCJY/go-gin-example/routers => c:/www/code/go-gin-example/routers
-	github.com/EDDYCJY/go-gin-example/routers/api => c:/www/code/go-gin-example/routers/api
+	github.com/whzywxt/gin-demo/conf => c:/www/code/go-gin-example/conf
+	github.com/whzywxt/gin-demo/docs => c:/www/code/go-gin-example/docs
+	github.com/whzywxt/gin-demo/middleware => c:/www/code/go-gin-example/middleware
+	github.com/whzywxt/gin-demo/middleware/jwt => c:/www/code/go-gin-example/middleware/jwt
+	github.com/whzywxt/gin-demo/models => c:/www/code/go-gin-example/models
+	github.com/whzywxt/gin-demo/pkg/app => c:/www/code/go-gin-example/pkg/app
+	github.com/whzywxt/gin-demo/pkg/e => c:/www/code/go-gin-example/pkg/e
+	github.com/whzywxt/gin-demo/pkg/export => c:/www/code/go-gin-example/pkg/export
+	github.com/whzywxt/gin-demo/pkg/file => c:/www/code/go-gin-example/pkg/file
+	github.com/whzywxt/gin-demo/pkg/gredis => c:/www/code/go-gin-example/pkg/gredis
+	github.com/whzywxt/gin-demo/pkg/logging => c:/www/code/go-gin-example/pkg/logging
+	github.com/whzywxt/gin-demo/pkg/qrcode => c:/www/code/go-gin-example/pkg/qrcode
+	github.com/whzywxt/gin-demo/pkg/service => c:/www/code/go-gin-example/pkg/service
+	github.com/whzywxt/gin-demo/pkg/service/auth_service => c:/www/code/go-gin-example/pkg/service/auth_service
+	github.com/whzywxt/gin-demo/pkg/service/tag_service => c:/www/code/go-gin-example/pkg/service/tag_service
+	github.com/whzywxt/gin-demo/pkg/service/article_service => c:/www/code/go-gin-example/pkg/service/article_service
+	github.com/whzywxt/gin-demo/pkg/setting => c:/www/code/go-gin-example/pkg/setting
+	github.com/whzywxt/gin-demo/pkg/util => c:/www/code/go-gin-example/pkg/util
+	github.com/whzywxt/gin-demo/routers => c:/www/code/go-gin-example/routers
+	github.com/whzywxt/gin-demo/routers/api => c:/www/code/go-gin-example/routers/api
 )

@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/file"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
+	"github.com/whzywxt/gin-demo/pkg/file"
+	"github.com/whzywxt/gin-demo/pkg/setting"
 )
 
 func getLogFilePath() string {
@@ -17,7 +17,7 @@ func getLogFileName() string {
 	return fmt.Sprintf("%s%s.%s", setting.AppSetting.LogSaveName, time.Now().Format(setting.AppSetting.TimeFormat), setting.AppSetting.LogFileExt)
 }
 
-func openLogFile(fileName, filePath string) (*os.File,error) {
+func openLogFile(fileName, filePath string) (*os.File, error) {
 	dir, err := os.Getwd()
 	if err != nil {
 		return nil, fmt.Errorf("os.Getwd err: %v", err)
@@ -34,7 +34,7 @@ func openLogFile(fileName, filePath string) (*os.File,error) {
 		return nil, fmt.Errorf("file.IsNotExistMkDir src: %s, err: %v", src, err)
 	}
 
-	f, err := file.Open(src + fileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	f, err := file.Open(src+fileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return nil, fmt.Errorf("Fail to OpenFile :%v", err)
 	}
@@ -44,7 +44,7 @@ func openLogFile(fileName, filePath string) (*os.File,error) {
 
 func mkDir() {
 	dir, _ := os.Getwd()
-	err := os.MkdirAll(dir + "/" + getLogFilePath(), os.ModePerm)
+	err := os.MkdirAll(dir+"/"+getLogFilePath(), os.ModePerm)
 	if err != nil {
 		panic(err)
 	}

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/EDDYCJY/go-gin-example/models"
-	"github.com/EDDYCJY/go-gin-example/pkg/gredis"
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
-	"github.com/EDDYCJY/go-gin-example/routers"
+	"github.com/whzywxt/gin-demo/models"
+	"github.com/whzywxt/gin-demo/pkg/gredis"
+	"github.com/whzywxt/gin-demo/pkg/logging"
+	"github.com/whzywxt/gin-demo/pkg/setting"
+	"github.com/whzywxt/gin-demo/routers"
 )
 
 // @title 							gin-demo API

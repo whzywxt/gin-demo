@@ -7,7 +7,7 @@ import (
 
 	"github.com/robfig/cron"
 
-	"github.com/EDDYCJY/go-gin-example/models"
+	"github.com/whzywxt/gin-demo/models"
 )
 
 func main() {
@@ -28,7 +28,7 @@ func main() {
 	t1 := time.NewTimer(time.Second * 10)
 	for {
 		select {
-		case v:=<-t1.C:
+		case v := <-t1.C:
 			fmt.Println(v)
 			t1.Reset(time.Second * 10)
 		}

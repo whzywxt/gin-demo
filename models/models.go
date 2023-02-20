@@ -9,7 +9,7 @@ import (
 
 	"time"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
+	"github.com/whzywxt/gin-demo/pkg/setting"
 )
 
 var db *gorm.DB

@@ -1,13 +1,13 @@
 package jwt
 
 import (
-	"time"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
+	"github.com/whzywxt/gin-demo/pkg/e"
+	"github.com/whzywxt/gin-demo/pkg/util"
 )
 
 func JWT() gin.HandlerFunc {

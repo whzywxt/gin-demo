@@ -7,13 +7,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/unknwon/com"
 
-	"github.com/EDDYCJY/go-gin-example/pkg/app"
-	"github.com/EDDYCJY/go-gin-example/pkg/e"
-	"github.com/EDDYCJY/go-gin-example/pkg/export"
-	"github.com/EDDYCJY/go-gin-example/pkg/logging"
-	"github.com/EDDYCJY/go-gin-example/pkg/setting"
-	"github.com/EDDYCJY/go-gin-example/pkg/util"
-	"github.com/EDDYCJY/go-gin-example/service/tag_service"
+	"github.com/whzywxt/gin-demo/pkg/app"
+	"github.com/whzywxt/gin-demo/pkg/e"
+	"github.com/whzywxt/gin-demo/pkg/export"
+	"github.com/whzywxt/gin-demo/pkg/logging"
+	"github.com/whzywxt/gin-demo/pkg/setting"
+	"github.com/whzywxt/gin-demo/pkg/util"
+	"github.com/whzywxt/gin-demo/service/tag_service"
 )
 
 // @Summary Get multiple article tags
