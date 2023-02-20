@@ -14,7 +14,11 @@ day02
 4. 优雅的重启服务
 5. 增加 Swagger
 6. 定制 GORM Callbacks
+7. Cron定时任务
 
+day03
+8. 优化配置结构及图片上传
+9. 优化应用结构和实现redis缓存
 
 
 ## conf

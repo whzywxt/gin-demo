@@ -13,11 +13,11 @@ type Level int
 var (
 	F *os.File
 
-	DefaultPrefix = ""
+	DefaultPrefix      = ""
 	DefaultCallerDepth = 2
 
-	logger *log.Logger
-	logPrefix = ""
+	logger     *log.Logger
+	logPrefix  = ""
 	levelFlags = []string{"DEBUG", "INFO", "WARN", "ERROR", "FATAL"}
 )
 
@@ -29,9 +29,14 @@ const (
 	FATAL
 )
 
-func init() {
-	filePath := getLogFileFullPath()
-	F = openLogFile(filePath)
+func Setup() {
+	var err error
+	fileName := getLogFileName()
+	filePath := getLogFilePath()
+	F, err = openLogFile(fileName, filePath)
+	if err != nil {
+		Fatal(err)
+	}
 
 	logger = log.New(F, DefaultPrefix, log.LstdFlags)
 }
