@@ -69,6 +69,8 @@ replace (
 	github.com/EDDYCJY/go-gin-example/pkg/qrcode => c:/www/code/go-gin-example/pkg/qrcode
 	github.com/EDDYCJY/go-gin-example/pkg/service => c:/www/code/go-gin-example/pkg/service
 	github.com/EDDYCJY/go-gin-example/pkg/service/auth_service => c:/www/code/go-gin-example/pkg/service/auth_service
+	github.com/EDDYCJY/go-gin-example/pkg/service/tag_service => c:/www/code/go-gin-example/pkg/service/tag_service
+	github.com/EDDYCJY/go-gin-example/pkg/service/article_service => c:/www/code/go-gin-example/pkg/service/article_service
 	github.com/EDDYCJY/go-gin-example/pkg/setting => c:/www/code/go-gin-example/pkg/setting
 	github.com/EDDYCJY/go-gin-example/pkg/util => c:/www/code/go-gin-example/pkg/util
 	github.com/EDDYCJY/go-gin-example/routers => c:/www/code/go-gin-example/routers

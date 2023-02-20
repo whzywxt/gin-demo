@@ -17,8 +17,16 @@ day02
 7. Cron定时任务
 
 day03
+
 8. 优化配置结构及图片上传
 9. 优化应用结构和实现redis缓存
+
+day04
+
+10. 实现导入导出
+  - 提示错误行及错误信息
+11. 生成二维码、合并海报
+
 
 
 ## conf
@@ -34,6 +42,8 @@ day03
 - driver `go get -u github.com/go-sql-driver/mysql`
 - validation `go get -u github.com/astaxie/beego/validation` 采用的 beego 的表单验证库
 - jwt `go get -u github.com/dgrijalva/jwt-go` 身份校验
+- excel `github.com/360EntSecGroup-Skylar/excelize`
+-	excel `github.com/tealeg/xlsx`
 
 ## database
 

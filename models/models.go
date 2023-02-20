@@ -21,6 +21,22 @@ type Model struct {
 	DeletedOn  int `json:"deleted_on"`
 }
 
+type ExistsError struct {
+	Code int
+	Err  string
+	Line int
+}
+
+func (this *ExistsError) Error() string {
+	return this.Err
+}
+func (this *ExistsError) GetCode() int {
+	return this.Code
+}
+func (this *ExistsError) getLine() int {
+	return this.Line
+}
+
 // Setup initializes the database instance
 func Setup() {
 	var err error

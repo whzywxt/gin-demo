@@ -3,9 +3,9 @@ package v1
 import (
 	"net/http"
 
-	"github.com/unknwon/com"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
+	"github.com/unknwon/com"
 
 	"github.com/EDDYCJY/go-gin-example/pkg/app"
 	"github.com/EDDYCJY/go-gin-example/pkg/e"
@@ -237,6 +237,9 @@ func ExportTag(c *gin.Context) {
 // @Router /api/v1/tags/import [post]
 func ImportTag(c *gin.Context) {
 	appG := app.Gin{C: c}
+	type errData struct {
+		msg string
+	}
 
 	file, _, err := c.Request.FormFile("file")
 	if err != nil {
@@ -249,7 +252,7 @@ func ImportTag(c *gin.Context) {
 	err = tagService.Import(file)
 	if err != nil {
 		logging.Warn(err)
-		appG.Response(http.StatusInternalServerError, e.ERROR_IMPORT_TAG_FAIL, nil)
+		appG.Response(http.StatusInternalServerError, e.ERROR_IMPORT_TAG_FAIL, err)
 		return
 	}
 

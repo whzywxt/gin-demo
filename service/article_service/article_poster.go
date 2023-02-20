@@ -177,12 +177,12 @@ func (a *ArticlePosterBg) Generate() (string, string, error) {
 			JPG:    jpg,
 			Merged: mergedF,
 
-			Title: "Golang Gin 系列文章",
+			Title: "Golang Gin Demo",
 			X0:    80,
 			Y0:    160,
 			Size0: 42,
 
-			SubTitle: "---煎鱼",
+			SubTitle: "---whzywxt",
 			X1:       320,
 			Y1:       220,
 			Size1:    36,

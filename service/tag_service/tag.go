@@ -10,10 +10,12 @@ import (
 	"github.com/tealeg/xlsx"
 
 	"github.com/EDDYCJY/go-gin-example/models"
+	"github.com/EDDYCJY/go-gin-example/pkg/e"
 	"github.com/EDDYCJY/go-gin-example/pkg/export"
 	"github.com/EDDYCJY/go-gin-example/pkg/file"
 	"github.com/EDDYCJY/go-gin-example/pkg/gredis"
 	"github.com/EDDYCJY/go-gin-example/pkg/logging"
+	"github.com/EDDYCJY/go-gin-example/pkg/setting"
 	"github.com/EDDYCJY/go-gin-example/service/cache_service"
 )
 
@@ -116,9 +118,11 @@ func (t *Tag) Export() (string, error) {
 			strconv.Itoa(v.ID),
 			v.Name,
 			v.CreatedBy,
-			strconv.Itoa(v.CreatedOn),
+			// strconv.Itoa(v.CreatedOn),
+			time.Unix(int64(v.CreatedOn), 0).Format(setting.AppSetting.DateTimeFormat),
 			v.ModifiedBy,
-			strconv.Itoa(v.ModifiedOn),
+			// strconv.Itoa(v.ModifiedOn),
+			time.Unix(int64(v.ModifiedOn), 0).Format(setting.AppSetting.DateTimeFormat),
 		}
 
 		row = sheet.AddRow()
@@ -157,6 +161,26 @@ func (t *Tag) Import(r io.Reader) error {
 			var data []string
 			for _, cell := range row {
 				data = append(data, cell)
+			}
+
+			// 标签是否存在
+			tagService := Tag{
+				Name: data[1],
+			}
+			exists, err := tagService.ExistByName()
+			if err != nil {
+				return &models.ExistsError{
+					Code: e.ERROR_EXIST_TAG,
+					Err:  e.GetMsg(e.ERROR_EXIST_TAG_FAIL),
+					Line: irow + 1,
+				}
+			}
+			if exists {
+				return &models.ExistsError{
+					Code: e.ERROR_EXIST_TAG,
+					Err:  e.GetMsg(e.ERROR_EXIST_TAG) + " " + data[1],
+					Line: irow + 1,
+				}
 			}
 
 			models.AddTag(data[1], 1, data[2])
