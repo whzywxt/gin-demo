@@ -294,7 +294,7 @@ const (
 func GenerateArticlePoster(c *gin.Context) {
 	appG := app.Gin{C: c}
 	article := &article_service.Article{}
-	qr := qrcode.NewQrCode(QRCODE_URL, 300, 300, qr.M, qr.Auto)
+	qr := qrcode.NewQrCode(QRCODE_URL, 250, 250, qr.M, qr.Auto)
 	posterName := article_service.GetPosterFlag() + "-" + qrcode.GetQrCodeFileName(qr.URL) + qr.GetQrCodeExt()
 	articlePoster := article_service.NewArticlePoster(posterName, article, qr)
 	articlePosterBgService := article_service.NewArticlePosterBg(
@@ -306,9 +306,10 @@ func GenerateArticlePoster(c *gin.Context) {
 			X1: 550,
 			Y1: 700,
 		},
+		 // 原 300x300 x=125,y=298
 		&article_service.Pt{
-			X: 125,
-			Y: 298,
+			X: 150,
+			Y: 323,
 		},
 	)
 

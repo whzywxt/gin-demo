@@ -1,5 +1,7 @@
 conf/app.ini
 .vscode/*
+cron.go
+t.go
 
 runtime/*
 !runtime/qrcode/bg.jpg

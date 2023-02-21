@@ -106,10 +106,10 @@ func (a *ArticlePosterBg) DrawPoster(d *DrawText, fontName string) error {
 	}
 
 	fc := freetype.NewContext()
-	fc.SetDPI(72)
-	fc.SetFont(trueTypeFont)
-	fc.SetFontSize(d.Size0)
-	fc.SetClip(d.JPG.Bounds())
+	fc.SetDPI(72) // 设置屏幕每英寸分辨率
+	fc.SetFont(trueTypeFont) // 设置字体
+	fc.SetFontSize(d.Size0) // 以磅为单位的字体大小
+	fc.SetClip(d.JPG.Bounds()) // 设置剪裁矩形以进行绘制
 	fc.SetDst(d.JPG)
 	fc.SetSrc(image.Black)
 
@@ -134,6 +134,7 @@ func (a *ArticlePosterBg) DrawPoster(d *DrawText, fontName string) error {
 }
 
 func (a *ArticlePosterBg) Generate() (string, string, error) {
+	// 获取二维码存储路径
 	fullPath := qrcode.GetQrCodeFullPath()
 	fileName, path, err := a.Qr.Encode(fullPath)
 	if err != nil {
@@ -178,14 +179,14 @@ func (a *ArticlePosterBg) Generate() (string, string, error) {
 			Merged: mergedF,
 
 			Title: "Golang Gin Demo",
-			X0:    80,
+			X0:    80, // 位置0
 			Y0:    160,
-			Size0: 42,
+			Size0: 32, // 字体大小
 
 			SubTitle: "---whzywxt",
-			X1:       320,
+			X1:       320, // 位置1
 			Y1:       220,
-			Size1:    36,
+			Size1:    24,
 		}, "msyhbd.ttc")
 
 		if err != nil {
